@@ -16,13 +16,18 @@ body {
   justify-content: center;
 }
 
+h1 {
+  margin-top: 20px;
+  color: #a7c080;
+}
+
 #app-container {
   display: flex;
   flex-direction: column;
 }
 
 #grid-container {
-  margin-top: 50px;
+  margin-top: 20px;
   box-sizing: content-box;
   display: flex;
   flex-wrap: wrap;
@@ -33,9 +38,15 @@ body {
   border-color: #4f5b58;
 }
 
+#button-container {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
 button {
-  margin-top: 20px;
-  width: 100px;
+  padding-left: 16px;
+  padding-right: 16px;
   height: 30px;
   font-size: 16px;
   font-weight: 800;
@@ -46,21 +57,23 @@ button {
   border-radius: 10px;
   border-color: #4f5b58;
 }
-button:hover {
+#clear-button:hover {
   background-color: #e67e80;
+}
+#change-grid-button:hover {
+  background-color: #7fbbb3;
 }
 button:active {
   opacity: 70%;
 }
 
 .grid-element {
-  width: 40px;
-  height: 40px;
+  aspect-ratio: 1 / 1;
   border-color: #e67e80;
   background-color: #272e33;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #4f5b58;
+  /*   border-style: solid; */
+  /*   border-width: 2px; */
+  /*   border-color: #4f5b58; */
 }
 
 .colored-grid-element {
