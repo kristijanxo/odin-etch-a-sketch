@@ -29,14 +29,30 @@ clearButton.addEventListener("click", () => {
 
 const changeGridButton = document.querySelector("#change-grid-button");
 changeGridButton.addEventListener("click", () => {
-  const newGridSize = prompt(
-    "Enter new grid size (applies to H×W, e.g., 16)",
-    16,
-  );
+  let validInput = false;
+  while (!validInput) {
+    const newGridSize = prompt(
+      "Enter new grid size (applies to H×W, max 100)",
+      16,
+    );
+    if (newGridSize === null) {
+      break;
+    }
 
-  gridContainer.replaceChildren();
-  createGrid(newGridSize);
-  addColorationListeners();
+    const gridSizeNumber = Number(newGridSize);
+    if (
+      Number.isInteger(gridSizeNumber) &&
+      gridSizeNumber >= 2 &&
+      gridSizeNumber <= 100
+    ) {
+      validInput = true;
+      gridContainer.replaceChildren();
+      createGrid(gridSizeNumber);
+      addColorationListeners();
+    } else {
+      alert("Invalid input. Please enter a number between 2-100");
+    }
+  }
 });
 
 createGrid();
